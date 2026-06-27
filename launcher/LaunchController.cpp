@@ -133,6 +133,11 @@ LaunchDecision LaunchController::decideLaunchMode()
         m_actualLaunchMode = LaunchMode::Demo;
         return LaunchDecision::Continue;
     }
+    
+    // ... (rest of the function)
+    m_actualLaunchMode = m_wantedLaunchMode;
+    return LaunchDecision::Continue;
+}   
 
     const auto* accounts = APPLICATION->accounts();
     MinecraftAccountPtr accountToCheck = nullptr;
