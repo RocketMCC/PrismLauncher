@@ -129,13 +129,9 @@ void LaunchController::decideAccount()
 
 LaunchDecision LaunchController::decideLaunchMode()
 {
-    if (!m_accountToUse || m_wantedLaunchMode == LaunchMode::Demo) {
-        m_actualLaunchMode = LaunchMode::Demo;
-        return LaunchDecision::Continue;
-    }
-    
-    // ... (rest of the function)
-    m_actualLaunchMode = m_wantedLaunchMode;
+    // FIX: Force launcher to proceed with the wanted mode (Offline/Normal)
+    // regardless of whether an account is detected.
+    this->m_actualLaunchMode = this->m_wantedLaunchMode;
     return LaunchDecision::Continue;
 }   
 
